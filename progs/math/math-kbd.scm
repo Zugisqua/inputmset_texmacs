@@ -69,7 +69,7 @@
   ("math f var var var" (make 'frac*))
   ("math s" (make-sqrt))
   ("math s var" (make-var-sqrt))
-;;  ("math n" (make-neg));conflict mark?
+  ("math n" (make-neg));conflict mark?
   ("math O" (make 'op))
   ("math +" (make-rprime "<dag>"))
   ("math a" (make-above))
