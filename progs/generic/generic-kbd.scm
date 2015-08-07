@@ -105,7 +105,7 @@
 ;  ("structured:move backspace" (structured-exit-left))
   ("structured:cmd h" (structured-left))
   ("structured:cmd g" (structured-right))
-  ("structured:cmd t" (structured-up))
+  ("structured:cmd r" (structured-up))
   ("structured:cmd n" (structured-down))
 ;  ("structured:move home" (structured-start))
 ;  ("structured:move end" (structured-end))

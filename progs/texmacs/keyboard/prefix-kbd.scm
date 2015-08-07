@@ -32,7 +32,8 @@
   ("emacs:prefix" "emacs x")
   ("emacs:meta" "A-" #t)
 ;;  ("std" "C-" #t)
-  ("cmd" "A-")
+;
+("cmd" "C-")
 ;  ("altcmd" "M-")
 ;  ("special" "M-C-")
 ;  ("accent" "M-" #t)
