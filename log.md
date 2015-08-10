@@ -1,3 +1,11 @@
+Date:   Fri Aug 9 00 2015 problems
+	1. the frequently uesed symbol need a shortcut
+	   1. the partial differential tab-2 not tab-4
+	   -2. ^ and _
+	2. if select-move could be use,that will be great
+	3. need words instruction ,it could use the “geometry” function for a good-looking
+	-4. copy and paste terms in caldulate
+
 Date:   Fri Aug 7 00 2015 
 
     1.Based on profile emacs but hardly 
