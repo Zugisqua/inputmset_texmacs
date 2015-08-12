@@ -37,9 +37,9 @@
 ;  ("altcmd" "M-")
 ;  ("special" "M-C-")
 ;  ("accent" "M-" #t)
-;  ("copyto" "M-W") ;see:genertic-kbd l194
+  ("copyto" "A-") ;see:genertic-kbd l194
 ;  ("cutto" "emacs W")
-;  ("pastefrom" "emacs Y")
+  ("pastefrom" "A-")
   ("structured:cmd" "A-")
 ;  ("structured:move" "S-")
 ;;  ("structured:insert" "C-")

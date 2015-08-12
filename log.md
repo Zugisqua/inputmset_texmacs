@@ -1,4 +1,7 @@
-Date:   Fri Aug 9 00 2015 problems
+Date:   Tue Aug 12 00 2015 
+	1. copy and paste terms in caldulate
+
+Date:   Mon Aug 9 00 2015 
 	1. the frequently uesed symbol need a shortcut
 	   1. the partial differential tab-2 not tab-4
 	   -2. ^ and _
