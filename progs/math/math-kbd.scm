@@ -57,9 +57,9 @@
   ("math:greek \"" (make-rprime "<ddag>"))
   ("math:greek +" (make-rprime "<kreuz>"))
   ("\"" (make-rprime "'") (make-rprime "'"))
-  ("math u" (make-script #f #t))
+  ("structured:cmd u" (make-script #f #t));change
   ("_ var" "_")
-  ("math t" (make-script #t #t))
+  ("structured:cmd i" (make-script #t #t));
   ("^ var" "^")
   ("math:left _" (make-script #f #f))
   ("math:left ^" (make-script #t #f))
