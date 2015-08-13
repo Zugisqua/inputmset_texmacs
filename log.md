@@ -1,4 +1,7 @@
-Date:   Tue Aug 12 00 2015 
+Date:   Thu Aug 13 13: 2015 
+	1.functional key "A-;"for math symbol
+
+Date:   Wed Aug 12 00 2015 
 	1. copy and paste terms in caldulate
 
 Date:   Mon Aug 9 00 2015 

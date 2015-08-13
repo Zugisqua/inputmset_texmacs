@@ -29,11 +29,11 @@
 (kbd-wildcards pre
   ("emacs" "C-" #t)
   ("emacs:contextual" "emacs c")
-  ("emacs:prefix" "emacs x")
+  ("emacs:prefix" "emacs ;")
   ("emacs:meta" "A-" #t)
 ;;  ("std" "C-" #t)
 ;
-("cmd" "C-")
+("cmd" "A-;");("" "A-;");append
 ;  ("altcmd" "M-")
 ;  ("special" "M-C-")
 ;  ("accent" "M-" #t)
@@ -230,8 +230,8 @@
   ("unvar" "S-tab" #t)  
 
   ("text" "cmd" #t)
-  ("math" "cmd" #t)
-  ("prog" "cmd" #t)
+  ("math" "cmd A-" #t);
+;  ("prog" "cmd" #t)
 
   ("font" "altcmd f")
   ("executable" "altcmd e")
@@ -265,7 +265,7 @@
   ("math:cal" "F7" #t)
   ("math:frak" "F8" #t)
   ("math:bbb" "S-F6" #t)
-  ("math:symbol" "S-F5" #t)
+  ("math:symbol" "cmd" #t);mark
   ("math:symbol:circled" "math:symbol @" #t)
   ("math:symbol:limits" "math:symbol L" #t)
 
