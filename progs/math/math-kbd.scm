@@ -140,10 +140,10 @@
   ("math:under <" (make-wide-under "<wide-varleftarrow>"))
   ("math:under >" (make-wide-under "<wide-varrightarrow>"))
 
-  ("table N c" (make 'choice))
-  ("table N m" (make 'matrix))
-  ("table N d" (make 'det))
-  ("table N s" (make 'stack))
+  ("structured:insert c" (make 'choice));change marks
+  ("structured:insert m" (make 'matrix));
+  ("structured:insert d" (make 'det));
+;  ("table N s" (make 'stack))
 
   ("font R" (make-with "math-font" "roman"))
   ("font K" (make-with "math-font" "concrete"))
@@ -188,6 +188,9 @@
   (". var var" "<cdummy>")
   (". var var var" "<nosymbol>")
   (". space" "<nosymbol>")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  ("math c" "cos S-9")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ("math:symbol a" "<amalg>")
   ("math:symbol d" "<partial>")

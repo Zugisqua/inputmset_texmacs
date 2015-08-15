@@ -42,7 +42,7 @@
   ("pastefrom" "A-")
   ("structured:cmd" "A-")
 ;  ("structured:move" "S-")
-;;  ("structured:insert" "C-")
+  ("structured:insert" "C-")
 ;;  ("structured:geometry" "A-S-")
 )
 
