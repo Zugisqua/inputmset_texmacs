@@ -57,9 +57,9 @@
   ("math:greek \"" (make-rprime "<ddag>"))
   ("math:greek +" (make-rprime "<kreuz>"))
   ("\"" (make-rprime "'") (make-rprime "'"))
-  ("math u" (make-script #f #t))
+  ("structured:cmd u" (make-script #f #t));change
   ("_ var" "_")
-  ("math t" (make-script #t #t))
+  ("structured:cmd i" (make-script #t #t));
   ("^ var" "^")
   ("math:left _" (make-script #f #f))
   ("math:left ^" (make-script #t #f))
@@ -69,11 +69,11 @@
   ("math f var var var" (make 'frac*))
   ("math s" (make-sqrt))
   ("math s var" (make-var-sqrt))
-  ("math n" (make-neg));conflict mark?
-  ("math O" (make 'op))
-  ("math +" (make-rprime "<dag>"))
-  ("math a" (make-above))
-  ("math b" (make-below))
+  ("math n" (make-neg))
+  ("math o" (make 'op));may be useful
+  ("math =" (make-rprime "<dag>"));
+;  ("math a" (make-above))
+;  ("math b" (make-below))
 
   ("math:syntax o" (make 'math-ordinary))
   ("math:syntax space" (make 'math-ignore))
@@ -102,9 +102,9 @@
   ("math U" (make-wide "<breve>"))
   ("math A" (make-wide "<invbreve>"))
   ("math T" (make-wide "<bind>"))
-  ("math V" (make-wide "<vect>"))
+  ("math v" (make-wide "<vect>"));
   ("math ~" (make-wide "~"))
-  ("math ^" (make-wide "^"))
+  ("math 6" (make-wide "^"));
   ("math '" (make-wide "<acute>"))
   ("math `" (make-wide "<grave>"))
   ("math -" (make-wide "<wide-bar>"))
@@ -140,10 +140,10 @@
   ("math:under <" (make-wide-under "<wide-varleftarrow>"))
   ("math:under >" (make-wide-under "<wide-varrightarrow>"))
 
-  ("table N c" (make 'choice))
-  ("table N m" (make 'matrix))
-  ("table N d" (make 'det))
-  ("table N s" (make 'stack))
+  ("structured:insert c" (make 'choice));change marks
+  ("structured:insert m" (make 'matrix));
+  ("structured:insert d" (make 'det));
+;  ("table N s" (make 'stack))
 
   ("font R" (make-with "math-font" "roman"))
   ("font K" (make-with "math-font" "concrete"))
@@ -188,6 +188,9 @@
   (". var var" "<cdummy>")
   (". var var var" "<nosymbol>")
   (". space" "<nosymbol>")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;  ("math c" "cos S-9")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ("math:symbol a" "<amalg>")
   ("math:symbol d" "<partial>")

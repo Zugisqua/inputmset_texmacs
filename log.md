@@ -1,4 +1,18 @@
-Date:   Fri Aug 9 00 2015 problems
+Date:   Sun Aug 16 13: 2015
+	1. shotcuts of ^,verctor,dag 
+	2. redo
+
+Date:   Sun Aug 16 01: 2015
+	1. shotcut about matrix calculate
+	2. other little change like undo
+
+Date:   Thu Aug 13 13: 2015 
+	1.functional key "A-;"for math symbol
+
+Date:   Wed Aug 12 00 2015 
+	1. copy and paste terms in caldulate
+
+Date:   Mon Aug 9 00 2015 
 	1. the frequently uesed symbol need a shortcut
 	   1. the partial differential tab-2 not tab-4
 	   -2. ^ and _
