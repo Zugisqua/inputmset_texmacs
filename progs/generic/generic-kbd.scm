@@ -182,8 +182,9 @@
   ("symbol |" "|")
 
 ;  ("undo" (noop) (undo 0))
-  ("structured:cmd '" (undo 0));append
-  ("redo" (noop) (redo 0))
+  ("structured:cmd /" (undo 0));append
+  ("structured:cmd '" (redo 0));append
+;  ("redo" (noop) (redo 0))
   ("cancel" (noop) (clipboard-clear "primary"))
 ;  ("cut" (noop) (clipboard-cut "primary"))
 ;  ("paste" (noop) (clipboard-paste "primary"))

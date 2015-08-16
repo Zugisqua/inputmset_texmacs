@@ -69,11 +69,11 @@
   ("math f var var var" (make 'frac*))
   ("math s" (make-sqrt))
   ("math s var" (make-var-sqrt))
-  ("math n" (make-neg));conflict mark?
-  ("math O" (make 'op))
-  ("math +" (make-rprime "<dag>"))
-  ("math a" (make-above))
-  ("math b" (make-below))
+  ("math n" (make-neg))
+  ("math o" (make 'op));may be useful
+  ("math =" (make-rprime "<dag>"));
+;  ("math a" (make-above))
+;  ("math b" (make-below))
 
   ("math:syntax o" (make 'math-ordinary))
   ("math:syntax space" (make 'math-ignore))
@@ -102,9 +102,9 @@
   ("math U" (make-wide "<breve>"))
   ("math A" (make-wide "<invbreve>"))
   ("math T" (make-wide "<bind>"))
-  ("math V" (make-wide "<vect>"))
+  ("math v" (make-wide "<vect>"));
   ("math ~" (make-wide "~"))
-  ("math ^" (make-wide "^"))
+  ("math 6" (make-wide "^"));
   ("math '" (make-wide "<acute>"))
   ("math `" (make-wide "<grave>"))
   ("math -" (make-wide "<wide-bar>"))

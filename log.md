@@ -1,3 +1,7 @@
+Date:   Sun Aug 16 13: 2015
+	1. shotcuts of ^,verctor,dag 
+	2. redo
+
 Date:   Sun Aug 16 01: 2015
 	1. shotcut about matrix calculate
 	2. other little change like undo
