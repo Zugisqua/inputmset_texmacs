@@ -1,3 +1,7 @@
+Date:   Mon Aug 24 18: 2015
+	1. append a copy$paste
+	2. change the structure up
+
 Date:   Sat Aug 22 19: 2015
 	1. shortcuts of ^ ,*
 	2. Dirac symbol and some common fuction have been introduced
