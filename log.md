@@ -1,3 +1,6 @@
+Date:   Mon Otc  7 18: 2015
+	1. merge the version of v3.math-shortcuts-af9d7
+	2. some stucture-move shortcuts up$down.etc 
 Date:   Sat Aug 22 19: 2015
 	1. shortcuts of ^ ,*
 	2. Dirac symbol and some common fuction have been introduced
