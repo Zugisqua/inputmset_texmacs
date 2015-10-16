@@ -104,7 +104,7 @@
   ("math T" (make-wide "<bind>"))
   ("math v" (make-wide "<vect>"));
   ("math ~" (make-wide "~"))
-  ("math 6" (make-wide "^"));
+  ("math b" (make-wide "^"));
   ("math '" (make-wide "<acute>"))
   ("math `" (make-wide "<grave>"))
   ("math -" (make-wide "<wide-bar>"))
@@ -188,8 +188,20 @@
   (". var var" "<cdummy>")
   (". var var var" "<nosymbol>")
   (". space" "<nosymbol>")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;  ("math c" "cos S-9")
+;;the Dirac symbols  
+  ("math:symbol 0" (math-bracket-open "|" "<rangle>" #f)) 
+  ("math:symbol 9" (math-bracket-open "<langle>" "|" #f))
+;;common function
+  ("math:symbol s" (math-bracket-open "sin" "" #f))
+  ("math:symbol s var" (math-bracket-open "sin(" ")" #f))
+  ("math:symbol c" (math-bracket-open "cos" "" #f))
+  ("math:symbol c var" (math-bracket-open "cos(" ")" #f))
+  ("math:symbol t" (math-bracket-open "tan" "" #f))
+  ("math:symbol t var" (math-bracket-open "tan(" ")" #f))
+  ("math:symbol l" (math-bracket-open "ln" "" #f))
+  ("math:symbol l var" (math-bracket-open "ln(" ")" #f))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ("math:symbol a" "<amalg>")
@@ -940,11 +952,11 @@
   ("+ =" "<plusassign>")
   ("- =" "<minusassign>")
   ("/ var" "<div>")
-  ("*" (insert-invisible "*"))
+  ("*" "<ast>")
   ("* *" (insert-invisible "*") (insert "<cdots>") (insert-invisible "*"))
-  ("* var" "<times>")
-  ("* var var" "<ast>")
-  ("* var var var" "<cdot>")
+  ("* var" "<cdot>");
+  ("* var var" "<times>");
+  ("* var var var" (insert-invisible "*"));
   ("* &" "<exterior>")
   ("| * var" "<ltimes>")
   ("| * var |" "<join>")
