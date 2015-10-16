@@ -57,9 +57,9 @@
   ("math:greek \"" (make-rprime "<ddag>"))
   ("math:greek +" (make-rprime "<kreuz>"))
   ("\"" (make-rprime "'") (make-rprime "'"))
-  ("_" (make-script #f #t))
+  ("structured:cmd u" (make-script #f #t));change
   ("_ var" "_")
-  ("^" (make-script #t #t))
+  ("structured:cmd i" (make-script #t #t));
   ("^ var" "^")
   ("math:left _" (make-script #f #f))
   ("math:left ^" (make-script #t #f))
@@ -70,10 +70,10 @@
   ("math s" (make-sqrt))
   ("math s var" (make-var-sqrt))
   ("math n" (make-neg))
-  ("math O" (make 'op))
-  ("math +" (make-rprime "<dag>"))
-  ("math a" (make-above))
-  ("math b" (make-below))
+  ("math o" (make 'op));may be useful
+  ("math =" (make-rprime "<dag>"));
+;  ("math a" (make-above))
+;  ("math b" (make-below))
 
   ("math:syntax o" (make 'math-ordinary))
   ("math:syntax space" (make 'math-ignore))
@@ -102,9 +102,9 @@
   ("math U" (make-wide "<breve>"))
   ("math A" (make-wide "<invbreve>"))
   ("math T" (make-wide "<bind>"))
-  ("math V" (make-wide "<vect>"))
+  ("math v" (make-wide "<vect>"));
   ("math ~" (make-wide "~"))
-  ("math ^" (make-wide "^"))
+  ("math b" (make-wide "^"));
   ("math '" (make-wide "<acute>"))
   ("math `" (make-wide "<grave>"))
   ("math -" (make-wide "<wide-bar>"))
@@ -140,10 +140,10 @@
   ("math:under <" (make-wide-under "<wide-varleftarrow>"))
   ("math:under >" (make-wide-under "<wide-varrightarrow>"))
 
-  ("table N c" (make 'choice))
-  ("table N m" (make 'matrix))
-  ("table N d" (make 'det))
-  ("table N s" (make 'stack))
+  ("structured:insert c" (make 'choice));change marks
+  ("structured:insert m" (make 'matrix));
+  ("structured:insert d" (make 'det));
+  ("structured:insert s" (make 'stack));
 
   ("font R" (make-with "math-font" "roman"))
   ("font K" (make-with "math-font" "concrete"))
@@ -188,6 +188,21 @@
   (". var var" "<cdummy>")
   (". var var var" "<nosymbol>")
   (". space" "<nosymbol>")
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;the Dirac symbols  
+  ("math:symbol 0" (math-bracket-open "|" "<rangle>" #f)) 
+  ("math:symbol 9" (math-bracket-open "<langle>" "|" #f))
+;;common function
+  ("math:symbol s" (math-bracket-open "sin" "" #f))
+  ("math:symbol s var" (math-bracket-open "sin(" ")" #f))
+  ("math:symbol c" (math-bracket-open "cos" "" #f))
+  ("math:symbol c var" (math-bracket-open "cos(" ")" #f))
+  ("math:symbol t" (math-bracket-open "tan" "" #f))
+  ("math:symbol t var" (math-bracket-open "tan(" ")" #f))
+  ("math:symbol l" (math-bracket-open "ln" "" #f))
+  ("math:symbol l var" (math-bracket-open "ln(" ")" #f))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
   ("math:symbol a" "<amalg>")
   ("math:symbol d" "<partial>")
@@ -767,7 +782,7 @@
   ("@ |" "<obar>")
   ("@ | var" "<ovee>")
   ("@ v" "<ovee>")
-  ("@ @" "<infty>")
+  ("@ @" "<infty>");I get it orz
   ("@ @ var" "<varocircle>")
   ("- @ @" "-<infty>")
   ("@ var" "<box>")
@@ -937,11 +952,11 @@
   ("+ =" "<plusassign>")
   ("- =" "<minusassign>")
   ("/ var" "<div>")
-  ("*" (insert-invisible "*"))
+  ("*" "<ast>")
   ("* *" (insert-invisible "*") (insert "<cdots>") (insert-invisible "*"))
-  ("* var" "<times>")
-  ("* var var" "<ast>")
-  ("* var var var" "<cdot>")
+  ("* var" "<cdot>");
+  ("* var var" "<times>");
+  ("* var var var" (insert-invisible "*"));
   ("* &" "<exterior>")
   ("| * var" "<ltimes>")
   ("| * var |" "<join>")
@@ -1484,9 +1499,9 @@
   ("b var var" "<flat>")
   ("s var var" "<varsigma>")
   ("c var" "<varsigma>")
-  ("d var" "<delta>")
+  ("d var" "<partial>");partial use more frenquently
   ("d var var" "<mathd>")
-  ("d var var var" "<partial>")
+  ("d var var var" "<delta>")
   ("e var" "<varepsilon>")
   ("e var var" "<mathe>")
   ("e var var var" "<epsilon>")

@@ -29,30 +29,33 @@
 (kbd-wildcards pre
   ("emacs" "C-" #t)
   ("emacs:contextual" "emacs c")
-  ("emacs:prefix" "emacs x")
-  ("emacs:meta" "M-" #t)
-  ("std" "C-" #t)
-  ("cmd" "A-")
-  ("altcmd" "M-")
-  ("special" "M-C-")
-  ("accent" "M-" #t)
-  ("copyto" "M-W")
-  ("cutto" "emacs W")
-  ("pastefrom" "emacs Y")
-  ("structured:cmd" "C-")
-  ("structured:move" "M-A-")
-  ("structured:insert" "A-")
-  ("structured:geometry" "M-"))
+  ("emacs:prefix" "emacs ;")
+  ("emacs:meta" "A-" #t)
+;;  ("std" "C-" #t)
+;
+("cmd" "A-;");("" "A-;");append
+;  ("altcmd" "M-")
+;  ("special" "M-C-")
+;  ("accent" "M-" #t)
+  ("copyto" "A-") ;see:genertic-kbd l194
+;  ("cutto" "emacs W")
+  ("pastefrom" "A-")
+  ("structured:cmd" "A-")
+;  ("structured:move" "S-")
+  ("structured:insert" "C-")
+;;  ("structured:geometry" "A-S-")
+)
 
 (kbd-wildcards
-  ("escape" "M-" #t)
-  ("escape escape" "A-" #t)
-  ("escape escape escape" "C-" #t)
-  ("escape escape escape escape" "noop" #t)
-  ("S-escape" "M-A-" #t)
-  ("S-escape S-escape" "M-C-" #t)
-  ("S-escape S-escape S-escape" "A-C-" #t)
-  ("S-escape S-escape S-escape S-escape" "noop" #t))
+;  ("escape" "M-" #t)
+;  ("escape escape" "A-" #t)
+;  ("escape escape escape" "C-" #t)
+;  ("escape escape escape escape" "noop" #t)
+;  ("S-escape" "M-A-" #t)
+;  ("S-escape S-escape" "M-C-" #t)
+;  ("S-escape S-escape S-escape" "A-C-" #t)
+;  ("S-escape S-escape S-escape S-escape" "noop" #t)
+)
 
 (kbd-map
   ("emacs" "" "Emacs command")
@@ -227,8 +230,8 @@
   ("unvar" "S-tab" #t)  
 
   ("text" "cmd" #t)
-  ("math" "cmd" #t)
-  ("prog" "cmd" #t)
+  ("math" "cmd A-" #t);
+;  ("prog" "cmd" #t)
 
   ("font" "altcmd f")
   ("executable" "altcmd e")
@@ -262,7 +265,7 @@
   ("math:cal" "F7" #t)
   ("math:frak" "F8" #t)
   ("math:bbb" "S-F6" #t)
-  ("math:symbol" "S-F5" #t)
+  ("math:symbol" "cmd" #t);mark
   ("math:symbol:circled" "math:symbol @" #t)
   ("math:symbol:limits" "math:symbol L" #t)
 
