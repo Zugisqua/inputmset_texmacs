@@ -143,7 +143,7 @@
   ("structured:insert c" (make 'choice));change marks
   ("structured:insert m" (make 'matrix));
   ("structured:insert d" (make 'det));
-;  ("table N s" (make 'stack))
+  ("structured:insert s" (make 'stack));
 
   ("font R" (make-with "math-font" "roman"))
   ("font K" (make-with "math-font" "concrete"))
