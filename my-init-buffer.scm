@@ -48,8 +48,8 @@
  ("grid d" (make 'det))
  ("grid s" (make 'stack))
 
- ("mathe n" (make-script #f #t))
- ("mathe r" (make-script #t #t))
+ ("move:C n" (make-script #f #t))
+ ("move:C i" (make-script #t #t))
 
  ("mathe f" (make-fraction))
  ("mathe f var" (make 'tfrac))
@@ -58,8 +58,8 @@
  ("mathe s" (make-sqrt))
  ("mathe s var" (make-var-sqrt))
  ("mathe /" (make-neg))
- ("mathe R" (make-above))
- ("mathe N" (make-below))
+ ("move:C I" (make-above))
+ ("move:C N" (make-below))
 
  ("mathe q" (make-wide "<vect>"))
  ("mathe q var" (make-wide "<dot>"))
@@ -73,7 +73,8 @@
  ("move:A g" (structured-right))
  ("move:A h" (structured-left))
  ("move:A [" (structured-insert-left))
- ("move:A ]" (structured-insert-right)))
+ ("move:A ]" (structured-insert-right))
+ )
 
 ;normal
 (kbd-map
