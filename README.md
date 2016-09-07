@@ -7,5 +7,5 @@ wishing for a quicker way to input mathemathca symbol in texmacs so that it coul
 configure files in dotTeXmacs, instead of modifying the extension source code like other branch here.
 
 #### other info ####
-texmacs version -- 1.99.2
-plantform -- sabayon
+texmacs version -- 1.99.5
+plantform -- Arch linux 4.7.2-1

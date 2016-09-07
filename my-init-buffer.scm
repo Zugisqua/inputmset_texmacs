@@ -23,13 +23,16 @@
 	       ("math:syntax" "math:structure x" #t)
 
 	       ("math" "C-")
-	       ("math:symbol" "mathe m")
+	       ("math:symbol" "mathe n")
 	       ("search" "noop")
+	       ("dagger" "M-e")
 
 	       ("mathe" "M-")
 	       ("grid" "C-]")
 	       ("move:A" "A-")
-	       ("move:C" "C-"))
+	       ("move:C" "C-")
+	       ("font" "M-c"))
+
 
 (load "/usr/share/TeXmacs/progs/generic/generic-kbd.scm")
 (load "/usr/share/TeXmacs/progs/math/math-kbd.scm")
@@ -48,9 +51,11 @@
  ("grid d" (make 'det))
  ("grid s" (make 'stack))
 
- ("move:C n" (make-script #f #t))
- ("move:C i" (make-script #t #t))
-
+ ("move:A n" (make-script #f #t))
+ ("move:A i" (make-script #t #t))
+ ("move:A I" (make-above))
+ ("move:A N" (make-below))
+ 
  ("mathe f" (make-fraction))
  ("mathe f var" (make 'tfrac))
  ("mathe f var var" (make 'dfrac))
@@ -58,15 +63,30 @@
  ("mathe s" (make-sqrt))
  ("mathe s var" (make-var-sqrt))
  ("mathe /" (make-neg))
- ("move:C I" (make-above))
- ("move:C N" (make-below))
-
+ 
  ("mathe q" (make-wide "<vect>"))
  ("mathe q var" (make-wide "<dot>"))
  ("mathe q var var" (make-wide "<ddot>"))
  ("mathe w" (make-wide "~"))
  ("mathe w var" (make-wide "^"))
  ("mathe w var var" (make-wide "<bar>"))
+
+ ("mathe e" (make-rprime "<asterisk>"))
+ ("mathe e var" (make-rprime "<dag>"))
+
+ ("{ mathe r" (make 'choice))
+ ("( mathe r" (make 'matrix))
+ ("[ mathe r" (make 'bmatrix))
+ ("| mathe r" (make 'det))
+ ("mathe r" (make 'tabular*))
+ ("mathe r var" (make 'matrix))
+ ("mathe r var var" (make 'det))
+ ("mathe r var var var" (make 'bmatrix))
+ ("mathe r var var var var" (make 'choice))
+ ("mathe r var var var var var" (make 'stack))
+  
+ ("space var" "<nospace>")
+ ("space var var" "<space>")
  
  ("move:C g" (structured-exit-right))
  ("move:C h" (structured-exit-left))
@@ -74,12 +94,29 @@
  ("move:A h" (structured-left))
  ("move:A [" (structured-insert-left))
  ("move:A ]" (structured-insert-right))
+; ("movd:A {" (geometry-left)) ;here does not work ,M-left
+; ("movd:A }" (geometry-right))
+ ("move:A space" (kbd-select-enlarge))
+
+;;;;;;;;special demands;;;;;;;;;;
+ ("0 var" (math-bracket-open "|" "<rangle>" #f))
+ ("9 var" (math-bracket-open "<langle>" "|" #f))
+
+ ("math:symbol s" (math-bracket-open "sin" "" #f))
+ ("math:symbol s var" (math-bracket-open "sin(" ")" #f))
+ ("math:symbol c" (math-bracket-open "cos" "" #f))
+ ("math:symbol c var" (math-bracket-open "cos(" ")" #f))
+ ("math:symbol t" (math-bracket-open "tan" "" #f))
+ ("math:symbol t var" (math-bracket-open "tan(" ")" #f))
+ ("math:symbol l" (math-bracket-open "ln" "" #f))
+ ("math:symbol l var" (math-bracket-open "ln(" ")" #f))
+ 
  )
 
 ;normal
 (kbd-map
- ("move:A r" (kbd-up))
- ("move:A n" (kbd-down))
+ ("move:A d" (kbd-up))
+ ("move:A k" (kbd-down))
  ("move:A f" (traverse-right))
  ("move:A F" (kbd-select traverse-right))
  ("move:A j" (traverse-left))
@@ -100,3 +137,9 @@
  ("grid" "")
  ("move:A" "")
  ("move:C" ""))
+
+;markcolor
+(kbd-map
+ ("M-F1" (make-with "color" "brown"))
+ ("M-F2" (make-with "color" "blue"))
+ ("M-F3" (make-with "color" "red")))
