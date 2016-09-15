@@ -9,3 +9,5 @@ configure files in dotTeXmacs, instead of modifying the extension source code li
 #### other info ####
 texmacs version -- 1.99.5
 plantform -- Arch linux 4.7.2-1
+
+the config is based on Xmodmap which separate A- from M-
