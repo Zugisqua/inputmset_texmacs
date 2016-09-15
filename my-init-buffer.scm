@@ -56,23 +56,24 @@
  ("move:A I" (make-above))
  ("move:A N" (make-below))
  
- ("mathe f" (make-fraction))
- ("mathe f var" (make 'tfrac))
- ("mathe f var var" (make 'dfrac))
- ("mathe f var var var" (make 'frac*))
+ ("mathe d" (make-fraction))
+ ("mathe d var" (make 'tfrac))
+ ("mathe d var var" (make 'dfrac))
+ ("mathe d var var var" (make 'frac*))
  ("mathe s" (make-sqrt))
  ("mathe s var" (make-var-sqrt))
  ("mathe /" (make-neg))
  
- ("mathe q" (make-wide "<vect>"))
- ("mathe q var" (make-wide "<dot>"))
- ("mathe q var var" (make-wide "<ddot>"))
- ("mathe w" (make-wide "~"))
- ("mathe w var" (make-wide "^"))
- ("mathe w var var" (make-wide "<bar>"))
+ ("math:symbol q" (make-wide "<vect>"))
+ ("math:symbol q var" (make 'embold))
+ ("math:symbol q var var" (make-wide "<dot>"))
+ ("math:symbol q var var var" (make-wide "<ddot>"))
+ ("math:symbol r" (make-wide "~"))
+ ("math:symbol r var" (make-wide "^"))
+ ("math:symbol r var var" (make-wide "<bar>"))
 
- ("mathe e" (make-rprime "<asterisk>"))
- ("mathe e var" (make-rprime "<dag>"))
+ ("math:symbol e" (make-rprime "<asterisk>"))
+ ("math:symbol e var" (make-rprime "<dag>"))
 
  ("{ mathe r" (make 'choice))
  ("( mathe r" (make 'matrix))
@@ -84,8 +85,9 @@
  ("mathe r var var var" (make 'bmatrix))
  ("mathe r var var var var" (make 'choice))
  ("mathe r var var var var var" (make 'stack))
-  
- ("space var" "<nospace>")
+
+ ("space" "<nospace>")
+ ("space var" (kbd-space))
  ("space var var" "<space>")
  
  ("move:C g" (structured-exit-right))
