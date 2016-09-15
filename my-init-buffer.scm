@@ -5,13 +5,13 @@
 	       ("emacs" "noop" #t)
 	       ("emacs:meta" "noop" #t)
 	       ("std" "noop" #t)
-	       ("cmd" "A-q" #t)
+	       ("cmd" "M-q" #t)
 	       ("altcmd" "noop" #t)
 	       ("special" "noop")
 	       ("accent" "noop" #t)
 	       ("copyto" "noop")
 	       ("cutto" "C-")
-	       ("pastefrom" "A-")
+	       ("pastefrom" "M-")
 	       	       	       
 	       ("math:structure" "C-q")
 	       ("math:over" "math:structure o" #t)
@@ -25,13 +25,14 @@
 	       ("math" "C-")
 	       ("math:symbol" "mathe n")
 	       ("search" "noop")
-	       ("dagger" "M-e")
-
-	       ("mathe" "M-")
+	       
+	       ("font" "C-")
+	       ("math:cal" "math p" #t)
+	       
+	       ("mathe" "A-")
 	       ("grid" "C-]")
-	       ("move:A" "A-")
-	       ("move:C" "C-")
-	       ("font" "M-c"))
+	       ("move:A" "M-")
+	       ("move:C" "C-"))
 
 
 (load "/usr/share/TeXmacs/progs/generic/generic-kbd.scm")
@@ -41,8 +42,9 @@
 
 ;math-mode-start
 (kbd-wildcards
- ("S-escape" "A-q $" #t)
- ("escape" "A-q &" #t))
+ ("S-escape" "M-q $" #t)
+ ("escape" "M-q &" #t)
+ ("`" "$" #t))
 
 (kbd-map
  (:mode in-math?)
@@ -56,13 +58,7 @@
  ("move:A I" (make-above))
  ("move:A N" (make-below))
  
- ("mathe d" (make-fraction))
- ("mathe d var" (make 'tfrac))
- ("mathe d var var" (make 'dfrac))
- ("mathe d var var var" (make 'frac*))
- ("mathe s" (make-sqrt))
- ("mathe s var" (make-var-sqrt))
- ("mathe /" (make-neg))
+ ("mathe x" (make-neg))
  
  ("math:symbol q" (make-wide "<vect>"))
  ("math:symbol q var" (make 'embold))
@@ -71,24 +67,12 @@
  ("math:symbol r" (make-wide "~"))
  ("math:symbol r var" (make-wide "^"))
  ("math:symbol r var var" (make-wide "<bar>"))
+ ("math:symbol e" (make-rprime "<dag>"))
+ ("math:symbol e var" (make-rprime "<asterisk>"))
 
- ("math:symbol e" (make-rprime "<asterisk>"))
- ("math:symbol e var" (make-rprime "<dag>"))
-
- ("{ mathe r" (make 'choice))
- ("( mathe r" (make 'matrix))
- ("[ mathe r" (make 'bmatrix))
- ("| mathe r" (make 'det))
- ("mathe r" (make 'tabular*))
- ("mathe r var" (make 'matrix))
- ("mathe r var var" (make 'det))
- ("mathe r var var var" (make 'bmatrix))
- ("mathe r var var var var" (make 'choice))
- ("mathe r var var var var var" (make 'stack))
 
  ("space" "<nospace>")
- ("space var" (kbd-space))
- ("space var var" "<space>")
+ ("space space" (make-space "1.5spc"))
  
  ("move:C g" (structured-exit-right))
  ("move:C h" (structured-exit-left))
@@ -96,9 +80,8 @@
  ("move:A h" (structured-left))
  ("move:A [" (structured-insert-left))
  ("move:A ]" (structured-insert-right))
-; ("movd:A {" (geometry-left)) ;here does not work ,M-left
-; ("movd:A }" (geometry-right))
  ("move:A space" (kbd-select-enlarge))
+
 
 ;;;;;;;;special demands;;;;;;;;;;
  ("0 var" (math-bracket-open "|" "<rangle>" #f))
@@ -117,6 +100,7 @@
 
 ;normal
 (kbd-map
+ 
  ("move:A d" (kbd-up))
  ("move:A k" (kbd-down))
  ("move:A f" (traverse-right))
@@ -142,6 +126,7 @@
 
 ;markcolor
 (kbd-map
- ("M-F1" (make-with "color" "brown"))
- ("M-F2" (make-with "color" "blue"))
- ("M-F3" (make-with "color" "red")))
+ ("A-F1" (make-with "color" "brown"))
+ ("A-F2" (make-with "color" "blue"))
+ ("A-F3" (make-with "color" "red"))
+ ("A-F4" (make-with "color" "black")))
