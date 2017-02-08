@@ -26,13 +26,15 @@
 	       ("math:symbol" "mathe n")
 	       ("search" "noop")
 	       
-	       ("font" "C-")
+	       ("font" "C-q")
 	       ("math:cal" "math p" #t)
 	       
 	       ("mathe" "A-")
 	       ("grid" "C-]")
 	       ("move:A" "M-")
-	       ("move:C" "C-"))
+	       ("move:C" "C-")
+;	       ("eqn" "escape")
+	       )
 
 
 (load "/usr/share/TeXmacs/progs/generic/generic-kbd.scm")
@@ -41,6 +43,11 @@
 
 
 ;math-mode-start
+;(kbd-map
+; (:mode in-std-text?)
+; ("eqn" (make-eqnarray*)))
+
+
 (kbd-wildcards
  ("S-escape" "M-q $" #t)
  ("escape" "M-q &" #t)
@@ -69,7 +76,6 @@
  ("math:symbol r var var" (make-wide "<bar>"))
  ("math:symbol e" (make-rprime "<dag>"))
  ("math:symbol e var" (make-rprime "<asterisk>"))
-
 
  ("space" "<nospace>")
  ("space space" (make-space "1.5spc"))
@@ -114,7 +120,15 @@
 
  ("move:A \\" (make 'new-line))
 
- ("cmd `" (make 'footnote)))
+ ("cmd [" (make 'footnote))
+ ("cmd ]" (make-marginal-note))
+
+ ("cmd ~" (make-toggle 'folded-std))
+
+ ("cmd l" (make 'label))
+ ("cmd r" (make 'reference))
+ ("cmd h" (make 'hlink)) 
+)
 
 ;explain
 (kbd-map
@@ -122,7 +136,9 @@
  ("math:structure" "")
  ("grid" "")
  ("move:A" "")
- ("move:C" ""))
+ ("move:C" "")
+; ("eqn" "")
+ )
 
 ;markcolor
 (kbd-map
@@ -130,3 +146,6 @@
  ("A-F2" (make-with "color" "blue"))
  ("A-F3" (make-with "color" "red"))
  ("A-F4" (make-with "color" "black")))
+
+
+

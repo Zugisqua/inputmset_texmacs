@@ -50,8 +50,9 @@
   ("math:symbol" "" "Insert a mathematical symbol")
   ("math:symbol:circled" "" "Insert a big circled operator")
   ("math:symbol:limits" "" "Insert a mathematical symbol with limits")
-  ("math:syntax" "" "Specify an alternative semantics"))
-
+  ("math:syntax" "" "Specify an alternative semantics")
+  )
+  
 (kbd-map
   (:mode in-prog?)
   ("prog" "" "TeXmacs command"))
