@@ -3,6 +3,8 @@
 <style|source>
 
 <\body>
+  \;
+
   <\active*>
     <\active*>
       <\src-title>
@@ -61,8 +63,6 @@
 
   \;
 
-  <assign|math-font|math-bonum>
-
   From: progs/fonts/fonts-truetype.scm & progs/fonts/fonts-math.scm
 
   <\active*>
@@ -71,9 +71,9 @@
     </src-comment>
   </active*>
 
-  <assign|page-even-header|<underline|P. <page-number><hflush><date>>>
+  <assign|page-even-header|<underline|P. <page-number><hflush>>>
 
-  <assign|page-odd-header|<underline|<date><hflush>P. <page-number>>>
+  <assign|page-odd-header|<underline|<hflush>P. <page-number>>>
 
   <\active*>
     <\src-comment>
@@ -87,30 +87,62 @@
 
   \;
 
+  <assign|display-subsection|<macro|head|<arg|head>>>
+
+  <assign|display-subsubsection|<macro|head|<number|<arg|head>|Alpha>.>>
+
   <assign|paragraph-display-numbers|<macro|true>>
+
+  <assign|display-paragraph|<macro|head|<number|<arg|head>|Roman>.>>
 
   <assign|subparagraph-display-numbers|<macro|true>>
 
+  <assign|display-subparagraph|<macro|head|<number|<arg|head>|roman>.>>
+
   \;
 
-  <assign|part-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|1cm><really-huge|<with|color|black|<arg|name>>><vspace|0.5cm>>>>>>
+  <assign|part-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|1cm><really-large|<with|color|black|<arg|name>>><vspace|0.5cm>>>>>>
 
-  <assign|chapter-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|1cm><huge|<with|color|black|Chapter.<arg|name>>><vspace|0.5cm>>>>>>
+  <assign|chapter-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.2cm><really-large|<with|color|black|<with|font-family|ss|<arg|name>>>><vspace|0.1cm>>>>>>
 
-  <assign|section-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.8cm><very-large|<with|color|dark
-  brown|<arg|name>>><vspace|0.4cm>>>>>>
+  <assign|section-numbered-title|<\macro|name>
+    <\sectional-normal-bold>
+      <vspace*|0.2cm>
 
-  <assign|subsection-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.7cm><very-large|<with|color|dark
-  brown|<arg|name>>><vspace|0.4cm>>>>>>
+      <\with|font-family|ss>
+        <very-large|<with|color|dark brown|<the-chapter>-<the-section>.<space|2spc><arg|name>>>
+      </with>
 
-  <assign|subsubsection-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.6cm><very-large|<with|color|dark
-  brown|<arg|name>>><vspace|0.3cm>>>>>>
+      <vspace|0.1cm>
+    </sectional-normal-bold>
 
-  <assign|paragraph-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.4cm><compound|large|<with|color|dark
-  orange|<arg|name>>><vspace|0.2cm>>>>>>
+    \;
+  </macro>>
 
-  <assign|subparagraph-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.3cm><compound|large|<with|color|dark
-  orange|<arg|name>>><vspace|0.1cm>>>>>>
+  <assign|subsection-numbered-title|<\macro|name>
+    <\sectional-normal-bold>
+      <vspace*|0.2cm>
+
+      <\with|font-family|ss>
+        <very-large|<\with|color|dark brown>
+          <the-chapter>-<the-section>-<the-subsection>.<space|2spc><arg|name>
+        </with>>
+      </with>
+
+      <vspace|0.1cm>
+    </sectional-normal-bold>
+
+    \;
+  </macro>>
+
+  <assign|subsubsection-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.2cm><large|<with|color|dark
+  brown|<with|font-family|ss|<arg|name>>>><vspace|0.1cm>>>>>>
+
+  <assign|paragraph-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.2cm><with|color|dark
+  orange|<arg|name>><vspace|0.1cm>>>>>>
+
+  <assign|subparagraph-title|<style-with|src-compact|none|<macro|name|<style-with|src-compact|none|<sectional-normal-bold|<vspace*|0.2cm><with|color|dark
+  orange|<arg|name>><vspace|0.1cm>>>>>>
 </body>
 
 <initial|<\collection>
